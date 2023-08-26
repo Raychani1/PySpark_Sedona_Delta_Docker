@@ -1,15 +1,11 @@
-# FROM python:3.9.5
 FROM python:3.9.5-alpine3.12
 
 WORKDIR /app
 
 # Setup PySpark Environment
-# RUN apt-get update && apt-get install -y openjdk-11-jdk wget
 RUN apk add --update --no-cache make automake gcc g++ subversion openjdk11 wget geos-dev
 ENV JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 
-# ENV PYTHONUNBUFFERED=1
-# RUN apk add --update --no-cache python3=3.9.5 && ln -sf python3 /usr/bin/python
 RUN python3 -m ensurepip
 RUN pip3 install --no-cache --upgrade pip setuptools
 
