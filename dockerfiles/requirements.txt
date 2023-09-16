@@ -1,0 +1,2 @@
+apache-sedona==1.4.1
+delta-spark==2.4.0
