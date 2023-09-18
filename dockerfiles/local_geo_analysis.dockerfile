@@ -12,7 +12,6 @@ ARG GEOTOOLS_WRAPPER_VERSION=1.4.0-28.2
 WORKDIR /app
 
 # Install Python libraries
-COPY requirements.txt .
 RUN pip install apache-sedona==${SEDONA_VERSION} delta-spark==${DELTA_CORE_VERSION} --no-cache-dir
 
 # Setup PySpark with Delta
