@@ -13,7 +13,7 @@ WORKDIR /app
 
 # Install Python libraries
 COPY requirements.txt .
-RUN pip install -r requirements.txt --no-cache-dir
+RUN pip install apache-sedona==${SEDONA_VERSION} delta-spark==${DELTA_CORE_VERSION} --no-cache-dir
 
 # Setup PySpark with Delta
 RUN wget "https://repo1.maven.org/maven2/io/delta/delta-core_${SCALA_VERSION}/${DELTA_CORE_VERSION}/delta-core_${SCALA_VERSION}-${DELTA_CORE_VERSION}.jar" -q --show-progress \
