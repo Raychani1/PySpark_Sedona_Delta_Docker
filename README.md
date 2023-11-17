@@ -90,36 +90,15 @@ Check out the following [project](https://github.com/Raychani1/PySpark_Sedona_De
    RUN pip install -r requirements.txt --no-cache-dir
     ```
 
-2. Build the Project related Docker Image
-   ```sh
-   docker build -t my_project .
-   ```
+2. Follow steps 4 - 6 in the [previous section](#building-the-image-locally).
 
-3. Create alternative way for more convenient execution
+### Developing your code in a Dev Container
 
-   On Linux:
-   ```sh
-   alias My_Project="docker run --rm -it -v $(pwd):/app my_project:latest"
-   ```
+1. Navigate to your Project directory and create a Project related Dockerfile based on the description in [previous section(s)](#pulling-image-from-docker-hub).
 
-   On Windows:
-   1. Create a PowerShell script file with the following content:
-      ```sh
-      function My_Project {
-         docker run --rm -it -v ${pwd}:/app my_project:latest $args    
-      }
-      ```
+2. Start up your Project container and connect to it using the official documentation for [VS Code](https://code.visualstudio.com/docs/devcontainers/containers) and [PyCharm](https://www.jetbrains.com/help/pycharm/connect-to-devcontainer.html#start_from_gateway).
 
-   2. Load the new function using the dot notation
-      ```sh
-      . .\my_project.ps1
-      ```
 
-4. Run your project through the environment
-   ```sh
-   My_Project python main.py
-   ```
-</br>
 
 ## **License**
 

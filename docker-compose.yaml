@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  local_pyspark:
+    build:
+      context: .
+      dockerfile: dockerfiles/local_pyspark.dockerfile
+      args:
+        - PYTHON_BASE_VERSION
+        - PYTHON_VERSION
+        - PYSPARK_VERSION
+    image: "local_pyspark:Py_${PYTHON_VERSION}_Spark_${PYSPARK_VERSION}"
+  local_geo_analysis:
+    build:
+      context: .
+      dockerfile: dockerfiles/local_geo_analysis.dockerfile
+      args:
+        - PYTHON_VERSION
+        - PYSPARK_VERSION
+        - SCALA_VERSION
+        - HADOOP_VERSION
+        - SEDONA_VERSION
+        - DELTA_CORE_VERSION
+        - GEOTOOLS_WRAPPER_VERSION
+    image: "local_geo_analysis:DB_${DATABRICKS_RUNTIME_VERSION}"
+    depends_on:
+      - local_pyspark
