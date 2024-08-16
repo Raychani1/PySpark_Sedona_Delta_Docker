@@ -81,7 +81,7 @@ Check out the following [project](https://github.com/Raychani1/PySpark_Sedona_De
 
 1. Navigate to your Project directory and create a Project related Dockerfile based on the new Image with the following content:
     ```sh
-   FROM rajcsanyiladislavit/spark_sedona_delta:latest 
+   FROM rajcsanyiladislavit/local_geo_analysis:latest 
 
    WORKDIR /app
 
